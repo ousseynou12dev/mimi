@@ -1,83 +1,211 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joyeux Anniversaire, MIMI !</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Joyeux Anniversaire, DIACK !</title>
+    <style>
+        /* Styles CSS intégrés */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            color: #333;
+            text-align: center;
+        }
+
+        .page-wrapper {
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffcccb;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .slideshow-images {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slideshow-images img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .video-container {
+            margin-top: 20px;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ffd1dc;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #countdown-timer {
+            font-size: 2rem;
+            margin-top: 10px;
+            color: #ff6f61;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
     <div class="page-wrapper">
         <!-- Animation Confetti -->
-        <div id="confetti"></div>
+        <canvas id="confetti"></canvas>
 
         <header>
-            <h1>🎉 Joyeux Anniversaire, MIMI ! 🎉</h1>
+            <h1>🎉 Joyeux Anniversaire, DIACK ! 🎉</h1>
+            <p class="tagline">Un jour spécial pour une personne extraordinaire !</p>
         </header>
 
         <section class="intro">
-            <p>Un an de plus, une raison de plus de célébrer la vie ! Voici quelques moments et une vidéo spéciale rien que pour toi.</p>
+            <p>Un an de plus, une raison de plus de célébrer la vie :</p>
+            <p>Que cette année soit remplie de bonheur, de succès et d'éclats de rire (sans explosions chimiques ! 🔬💥). Rappelle-toi : tu es l'élément le plus précieux du tableau périodique de tes amis. 🧪✨</p>
         </section>
 
         <section class="countdown">
             <h2>La surprise arrive dans :</h2>
-            <div id="countdown-timer"></div>
+            <div id="countdown-timer">00:00:00</div>
         </section>
 
         <section class="media">
-            <div class="image-gallery">
-                <img src="videoimage/362f60282601491fbd8da43fcd6e9dc3.jpg" alt="Photo anniversaire 1" class="image-item">
-                <img src="videoimage/rose.jpg" alt="Photo anniversaire 2" class="image-item">
-                <img src="videoimage/IMG-20221205-WA0019.jpg" alt="Photo anniversaire 3" class="image-item">
-                <img src="videoimage/bio.jpg" alt="Photo anniversaire 3" class="image-item">
+            <h2>🎥 Photos 🎥</h2>
+            <div class="slideshow-container">
+                <div class="slideshow-images">
+                    <img src="videoimage/IMG-20250101-WA0005.jpg" alt="Photo 1">
+                    <img src="videoimage/IMG-20250101-WA0006.jpg" alt="Photo 2">
+                    <img src="videoimage/IMG-20250101-WA0007.jpg" alt="Photo 3">
+                </div>
             </div>
-            <div class="video-container">
-                <h2>Vidéo spéciale pour toi ! 🎥</h2>
-                <video width="100%" controls>
-                    <source src="videoimage/miminafi.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas les vidéos.
-                </video>
-                <video width="100%" controls>
-                    <source src="videoimage/qn.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas les vidéos.
-                </video>
-                <video width="100%" controls>
-                    <source src="videoimage/hassida.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas les vidéos.
-                </video>
-                <video width="100%" controls>
-                    <source src="videoimage/fst.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas les vidéos.
-                </video>
-                <video width="100%" controls>
-                    <source src="videoimage/vid.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas les vidéos.
-                </video>
-            </div>
-        </section>
 
-        <section class="audio-message">
-            <h2>Un message audio spécial pour toi ! 🎶</h2>
-            <audio controls>
-                <source src="videoimage/WhatsApp Audio 2024-12-04 à 20.02.41_706ffb81.waptt.opus" type="audio/mp3">
-                Votre navigateur ne supporte pas l'audio.
-            </audio>
-            <audio controls>
-                <source src="videoimage/ousseynou.opus" type="audio/mp3">
-                Votre navigateur ne supporte pas l'audio.
-            </audio>
-            <audio controls>
-                <source src="videoimage/diack.opus" type="audio/mp3">
-                Votre navigateur ne supporte pas l'audio.
-            </audio>
+            <div class="video-container">
+                <h2>🎬 Vidéo spéciale pour toi !</h2>
+                <video controls>
+                    <source src="videoimage/VID-20250103-WA0001.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas les vidéos.
+                </video>
+            </div>
         </section>
 
         <footer>
-            <p>Que cette journée soit aussi incroyable que toi, remplie de rires, de bonheur et de souvenirs mémorables !</p>
+            <p>🎂 Que cette journée soit aussi incroyable que toi, remplie de rires, de bonheur et de souvenirs mémorables ! 🎂</p>
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Confetti animation
+        const confettiCanvas = document.getElementById('confetti');
+        confettiCanvas.width = window.innerWidth;
+        confettiCanvas.height = window.innerHeight;
+        const confettiCtx = confettiCanvas.getContext('2d');
+        const confettiPieces = [];
+
+        for (let i = 0; i < 200; i++) {
+            confettiPieces.push({
+                x: Math.random() * confettiCanvas.width,
+                y: Math.random() * confettiCanvas.height,
+                color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+                size: Math.random() * 10 + 2,
+                speedX: Math.random() * 2 - 1,
+                speedY: Math.random() * 2 + 1,
+            });
+        }
+
+        function renderConfetti() {
+            confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            confettiPieces.forEach(p => {
+                confettiCtx.fillStyle = p.color;
+                confettiCtx.fillRect(p.x, p.y, p.size, p.size);
+                p.x += p.speedX;
+                p.y += p.speedY;
+                if (p.y > confettiCanvas.height) p.y = -p.size;
+            });
+            requestAnimationFrame(renderConfetti);
+        }
+
+        renderConfetti();
+
+        // Countdown timer
+        const targetDate = new Date().setHours(23, 59, 59); // Set to midnight
+        const countdownTimer = document.getElementById('countdown-timer');
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                countdownTimer.textContent = "C'est l'heure de célébrer ! 🎉";
+                return;
+            }
+
+            const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+            const minutes = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+            const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+            countdownTimer.textContent = `${hours}:${minutes}:${seconds}`;
+            requestAnimationFrame(updateCountdown);
+        }
+
+        updateCountdown();
+
+        // Slideshow
+        const slideshowImages = document.querySelector('.slideshow-images');
+        const images = document.querySelectorAll('.slideshow-images img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            slideshowImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    </script>
 </body>
 </html>
